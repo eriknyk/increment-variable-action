@@ -1,0 +1,46 @@
+name: 'increment-variable-action'
+description: 'Increment a variable value +1 by default'
+author: 'Erik Amaru Ortiz'
+
+branding:
+  color: 'blue'
+  icon: 'anchor'
+
+inputs:
+  name:
+    description: Name
+    required: true
+
+  amount:
+    description: Amount
+    default: 1
+    required: false
+
+  repository:
+    description: Repository name
+    default: false
+    required: false
+
+  owner:
+    description: Repository owner
+    default: false
+    required: false
+
+  org:
+    description: Flag for organization
+    default: false
+    required: false
+
+  token:
+    description: Repository access token
+    required: true
+
+outputs:
+  previous:
+    description: 'The previous value before update'
+  current:
+    description: 'The current value after update'
+
+runs:
+  using: "node20"
+  main: "index.js"
